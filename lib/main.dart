@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_samples_app/animation/animations.dart';
+import 'package:my_samples_app/gestures/gestures_test.dart';
+import 'package:my_samples_app/lists/swipe_refresh.dart';
 import 'package:my_samples_app/localizations/app_localizations_deletage.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_samples_app/localizations/fallback_localizations_delegate.dart';
@@ -58,6 +60,8 @@ class MyHomePage extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisSize: MainAxisSize.max, children: <Widget>[
           RaisedButton(onPressed: () => navigateToAnimations(context), child: Text("Animations")),
           RaisedButton(onPressed: () => navigateToLocalizations(context), child: Text("Localization")),
+          RaisedButton(onPressed: () => navigateToGestures(context), child: Text("Gestures")),
+          RaisedButton(onPressed: () => navigateToSwipeRefresh(context), child: Text("SwipeRefresh")),
         ]),
       ),
     );
@@ -69,5 +73,13 @@ class MyHomePage extends StatelessWidget {
 
   navigateToLocalizations(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => LocalizationsPage()));
+  }
+
+  navigateToGestures(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => GesturesTestPage()));
+  }
+
+  navigateToSwipeRefresh(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SwipeRefreshPage()));
   }
 }
